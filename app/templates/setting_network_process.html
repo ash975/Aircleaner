@@ -1,0 +1,46 @@
+{% extends "setting.html" %}
+
+{% block slide_bar %}
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+        <!--<li><a href='{{url_for("setting.device")}}'>设备状态</a></li>-->
+        <li><a href='{{url_for("setting.switch")}}'>功能开关</a></li>
+        <li><a href='{{url_for("setting.network")}}'>网络设置</a></li>
+        <li><a href='{{url_for("setting.safe")}}'>安全设置</a></li>
+        <li><a href='{{url_for("setting.reset")}}'>重置</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block setting_content %}
+
+<div class="progress progress-striped">
+    <div class="progress-bar progress-bar-success" role="progressbar" id="progressbar"
+         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+         style="width: 90%;">
+        <span class="sr-only">90% 完成（成功）</span>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+    var current_progress = 0;
+
+    function progress_go() {
+        if (current_progress < 100){
+            current_progress = current_progress + 10;
+            $('#progressbar').style.width= current_progress + '%';
+        }else if(current_progress == 100){
+            setTimeout(function () {
+                self.location = 'success';
+            }, 3000);
+        }
+    }
+    $(document).ready(function () {
+        setInterval(progress_go, 1000);
+    });
+</script>
+{% endblock %}

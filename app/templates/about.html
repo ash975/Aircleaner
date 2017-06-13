@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}关于{% endblock %}
+
+{% block head %}
+{{ super() }}
+<style>
+    .my-top-10 {
+        margin-top: 10px;
+        position: relative;
+    }
+
+    .my-container{
+        margin-top: 80px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+    }
+
+</style>
+{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img class="logo" alt="Logo" height="40px" width="40px"  src="{{ url_for('static', filename = 'logo.png') }}">
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">主页</a></li>
+                <li><a href="/setting">设置</a></li>
+                <li class="active"><a href="/about">关于</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Aircleaner</a></li>
+              <li><a href="/users/logout">注销</a></li>
+            </ul>
+        </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block page_content %}
+<div class="row" align="center">
+    <div class="my-container container-fluid">
+        <div class="row">
+                <img src="{{ url_for('static', filename ='background_login.jpg') }}">
+        </div>
+        <div class="my-top-10">
+                <h1>一次课程设计</h1>
+            <span><h3>小组成员：庞磊 胡立彬 王维芳 解宇 寻飞飞 岳晨曦</h3></span>
+        </div>
+    </div>
+</div>
+{% endblock %}

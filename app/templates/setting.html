@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img class="logo" alt="Logo" height="40px" width="40px"
+                     src="{{ url_for('static', filename = 'logo.png') }}">
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">主页</a></li>
+                <li class="active"><a href="/setting">设置</a></li>
+                <li><a href="/about">关于</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Aircleaner</a></li>
+                <li><a href="/users/logout">注销</a></li>
+            </ul>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block title %}设置{% endblock %}
+
+{% block head %}
+{{ super() }}
+<!-- Bootstrap core CSS -->
+<link href="/static/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<link href="/static/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="/static/dashboard.css" rel="stylesheet">
+<script src="/static/assets/js/ie-emulation-modes-warning.js"></script>
+{% endblock %}
+
+{% block page_content %}
+<div class="row">
+    {% block slide_bar %}
+    <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+            <!--<li class="active"><a href='{{url_for("setting.device")}}'>设备状态</a></li>-->
+            <li><a href='{{url_for("setting.switch")}}'>功能开关</a></li>
+            <li><a href='{{url_for("setting.network")}}'>网络设置</a></li>
+            <li><a href='{{url_for("setting.safe")}}'>安全设置</a></li>
+            <li><a href='{{url_for("setting.reset")}}'>重置</a></li>
+        </ul>
+    </div>
+    {% endblock %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+        {% block setting_content %}{% endblock %}
+
+    </div>
+</div>
+
+
+{% endblock %}

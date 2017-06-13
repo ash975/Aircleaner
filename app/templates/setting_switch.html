@@ -1,0 +1,127 @@
+{% extends "setting.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block head %}
+{{ super() }}
+<link href="/static/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
+{% endblock %}
+
+{% block slide_bar %}
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+        <!--<li><a href='{{url_for("setting.device")}}'>设备状态</a></li>-->
+        <li class="active"><a href='{{url_for("setting.switch")}}'>功能开关</a></li>
+        <li><a href='{{url_for("setting.network")}}'>网络设置</a></li>
+        <li><a href='{{url_for("setting.safe")}}'>安全设置</a></li>
+        <li><a href='{{url_for("setting.reset")}}'>重置</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block setting_content %}
+<form class="form form-horizontal" method="post" role="form">
+    <table width="100%" cellpadding="4" cellspacing="0" class="table">
+ <span>
+    <tr>
+        <th>风扇开关</th>
+        <td>
+            {{ form.hidden_tag() }}
+            {{ wtf.form_errors(form, hiddens="only") }}
+            {{ wtf.form_field(form.fan_switch) }}
+        </td>
+    </tr>
+ </span>
+        <span>
+    <tr>
+        <th>空气质量检测开关</th>
+        <td>
+            {{ form.hidden_tag() }}
+            {{ wtf.form_errors(form, hiddens="only") }}
+            {{ wtf.form_field(form.pm25_switch) }}
+        </td>
+    </tr>
+ </span>
+
+        <span>
+    <tr>
+        <th>温湿度检测开关</th>
+        <td>
+            {{ form.hidden_tag() }}
+            {{ wtf.form_errors(form, hiddens="only") }}
+            {{ wtf.form_field(form.thermometer_switch) }}
+        </td>
+    </tr>
+ </span>
+
+        <span>
+    <tr>
+        <th>净化器开关</th>
+        <td>
+            {{ form.hidden_tag() }}
+            {{ wtf.form_errors(form, hiddens="only") }}
+            {{ wtf.form_field(form.host_switch) }}
+        </td>
+    </tr>
+ </span>
+
+        <!--<span>-->
+        <!--<tr>-->
+        <!--<th>风扇转速</th>-->
+        <!--<td>-->
+        <!--1-->
+        <!--</td>-->
+        <!--</tr>-->
+        <!--</span>-->
+
+        </span>
+
+        <span>
+        <tr>
+        <th>
+            {{ form.hidden_tag() }}
+            {{ wtf.form_errors(form, hiddens="only") }}
+            {{ wtf.form_field(form.submit) }}
+        </th>
+            <td></td>
+        </tr>
+    </span>
+
+    </table>
+</form>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="/static/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
+<script>
+
+    function get_switch_state() {
+        $.getJSON(device_api_list.all, function (result) {
+            var data = new Object();
+            data['fan_switch'] = result.fan.switch;
+            data['pm25_switch'] = result.pm25.switch;
+            data['thermometer_switch'] = result.thermometer.switch;
+            data['host_switch'] = result.host.switch;
+
+            for (s in data) {
+                if (data[s]) {
+                    data[s] = 'checked'
+                } else {
+                    data[s] = ' '
+                }
+            }
+        });
+    }
+
+    $("[name='fan_switch']").bootstrapSwitch('state', '{{ switch_state.fan_switch }}');
+    $("[name='pm25_switch']").bootstrapSwitch('state', '{{ switch_state.pm25_switch }}');
+    $("[name='thermometer_switch']").bootstrapSwitch('state', '{{ switch_state.thermometer_switch }}');
+    $("[name='host_switch']").bootstrapSwitch('state', '{{ switch_state.host_switch }}');
+
+    $(document).ready(function () {
+
+    });
+
+</script>
+
+{% endblock %}

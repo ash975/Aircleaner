@@ -1,0 +1,231 @@
+[uWSGI] getting INI configuration from /root/aircleaner/uWSGI/uwsgi.ini
+*** Starting uWSGI 2.0.14-debian (32bit) on [Tue Jun 13 00:19:20 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 17:48:00
+os: Linux-4.9.0-2-686 #1 SMP Debian 4.9.18-1 (2017-03-30)
+nodename: webserver
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /
+detected binary path: /usr/bin/uwsgi-core
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/aircleaner
+your processes number limit is 7903
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /root/aircleaner/uWSGI/uwsgi.sock fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
+PEP 405 virtualenv detected: /root/aircleaner/venv
+Set PythonHome to /root/aircleaner/venv
+Python main interpreter initialized at 0x817bcaa8
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 127976 bytes (124 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x817bcaa8 pid: 1223 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1223)
+spawned uWSGI worker 1 (pid: 1230, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 3 seconds
+goodbye to uWSGI.
+[uWSGI] getting INI configuration from /root/aircleaner/uWSGI/uwsgi.ini
+*** Starting uWSGI 2.0.14-debian (32bit) on [Tue Jun 13 00:19:33 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 17:48:00
+os: Linux-4.9.0-2-686 #1 SMP Debian 4.9.18-1 (2017-03-30)
+nodename: webserver
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /
+detected binary path: /usr/bin/uwsgi-core
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/aircleaner
+your processes number limit is 7903
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /root/aircleaner/uWSGI/uwsgi.sock fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
+PEP 405 virtualenv detected: /root/aircleaner/venv
+Set PythonHome to /root/aircleaner/venv
+Python main interpreter initialized at 0x81d88aa8
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 127976 bytes (124 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x81d88aa8 pid: 1232 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1232)
+spawned uWSGI worker 1 (pid: 1239, cores: 1)
+[pid: 1239|app: 0|req: 1/1] 192.168.1.244 () {44 vars in 881 bytes} [Tue Jun 13 00:19:44 2017] GET / => generated 249 bytes in 37 msecs (HTTP/1.1 302) 4 headers in 323 bytes (1 switches on core 0)
+[pid: 1239|app: 0|req: 2/2] 192.168.1.244 () {44 vars in 956 bytes} [Tue Jun 13 00:19:44 2017] GET /users/login?next=%2F => generated 3075 bytes in 289 msecs (HTTP/1.1 200) 4 headers in 319 bytes (1 switches on core 0)
+[pid: 1239|app: 0|req: 3/3] 192.168.1.244 () {44 vars in 920 bytes} [Tue Jun 13 00:20:47 2017] GET /users/login?next=%2F => generated 2956 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 319 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 3 seconds
+binary reloading uWSGI...
+chdir() to /
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/aircleaner/uWSGI/uwsgi.sock)
+running /usr/bin/uwsgi-core
+[uWSGI] getting INI configuration from /root/aircleaner/uWSGI/uwsgi.ini
+*** Starting uWSGI 2.0.14-debian (32bit) on [Tue Jun 13 00:21:00 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 17:48:00
+os: Linux-4.9.0-2-686 #1 SMP Debian 4.9.18-1 (2017-03-30)
+nodename: webserver
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /
+detected binary path: /usr/bin/uwsgi-core
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/aircleaner
+your processes number limit is 7903
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /root/aircleaner/uWSGI/uwsgi.sock fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
+PEP 405 virtualenv detected: /root/aircleaner/venv
+Set PythonHome to /root/aircleaner/venv
+Python main interpreter initialized at 0x817a5a60
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 127976 bytes (124 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x817a5a60 pid: 1232 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1232)
+spawned uWSGI worker 1 (pid: 1389, cores: 1)
+[pid: 1389|app: 0|req: 1/1] 192.168.1.244 () {44 vars in 920 bytes} [Tue Jun 13 00:21:09 2017] GET /users/login?next=%2F => generated 2956 bytes in 263 msecs (HTTP/1.1 200) 4 headers in 319 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 3 seconds
+binary reloading uWSGI...
+chdir() to /
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/aircleaner/uWSGI/uwsgi.sock)
+running /usr/bin/uwsgi-core
+[uWSGI] getting INI configuration from /root/aircleaner/uWSGI/uwsgi.ini
+*** Starting uWSGI 2.0.14-debian (32bit) on [Tue Jun 13 00:21:18 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 17:48:00
+os: Linux-4.9.0-2-686 #1 SMP Debian 4.9.18-1 (2017-03-30)
+nodename: webserver
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /
+detected binary path: /usr/bin/uwsgi-core
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/aircleaner
+your processes number limit is 7903
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /root/aircleaner/uWSGI/uwsgi.sock fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
+PEP 405 virtualenv detected: /root/aircleaner/venv
+Set PythonHome to /root/aircleaner/venv
+Python main interpreter initialized at 0x805d1a60
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 127976 bytes (124 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x805d1a60 pid: 1232 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1232)
+spawned uWSGI worker 1 (pid: 1401, cores: 1)
+Tue Jun 13 00:21:44 2017 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+[uWSGI] getting INI configuration from /root/aircleaner/uWSGI/uwsgi.ini
+*** Starting uWSGI 2.0.14-debian (32bit) on [Tue Jun 13 00:21:44 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 17:48:00
+os: Linux-4.9.0-2-686 #1 SMP Debian 4.9.18-1 (2017-03-30)
+nodename: webserver
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /
+detected binary path: /usr/bin/uwsgi-core
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/aircleaner
+your processes number limit is 7903
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /root/aircleaner/uWSGI/uwsgi.sock fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
+PEP 405 virtualenv detected: /root/aircleaner/venv
+Set PythonHome to /root/aircleaner/venv
+Python main interpreter initialized at 0x8219eaa8
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 127976 bytes (124 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x8219eaa8 pid: 1405 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1405)
+spawned uWSGI worker 1 (pid: 1412, cores: 1)
+[pid: 1412|app: 0|req: 1/1] 192.168.1.244 () {44 vars in 920 bytes} [Tue Jun 13 00:21:50 2017] GET /users/login?next=%2F => generated 2956 bytes in 315 msecs (HTTP/1.1 200) 4 headers in 319 bytes (1 switches on core 0)
+/root/aircleaner/venv/lib/python3.5/site-packages/pymongo/topology.py:145: UserWarning: MongoClient opened before fork. Create MongoClient with connect=False, or create client after forking. See PyMongo's documentation for details: http://api.mongodb.org/python/current/faq.html#pymongo-fork-safe>
+  "MongoClient opened before fork. Create MongoClient "
+[pid: 1412|app: 0|req: 2/2] 192.168.1.244 () {52 vars in 1129 bytes} [Tue Jun 13 00:26:22 2017] POST /users/login?next=%2F => generated 209 bytes in 244 msecs (HTTP/1.1 302) 4 headers in 432 bytes (1 switches on core 0)
+[pid: 1412|app: 0|req: 3/3] 192.168.1.244 () {46 vars in 1103 bytes} [Tue Jun 13 00:26:23 2017] GET / => generated 10621 bytes in 110 msecs (HTTP/1.1 200) 2 headers in 82 bytes (1 switches on core 0)
+[pid: 1412|app: 0|req: 4/4] 192.168.1.244 () {44 vars in 1049 bytes} [Tue Jun 13 00:26:27 2017] GET /api/v1.0/device/ => generated 769 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 3 seconds
+goodbye to uWSGI.
+[uWSGI] getting INI configuration from /root/aircleaner/uWSGI/uwsgi.ini
+*** Starting uWSGI 2.0.14-debian (32bit) on [Tue Jun 13 00:27:07 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 17:48:00
+os: Linux-4.9.0-2-686 #1 SMP Debian 4.9.18-1 (2017-03-30)
+nodename: webserver
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /
+detected binary path: /usr/bin/uwsgi-core
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/aircleaner
+your processes number limit is 7906
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /root/aircleaner/uWSGI/uwsgi.sock fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
+PEP 405 virtualenv detected: /root/aircleaner/venv
+Set PythonHome to /root/aircleaner/venv
+Python main interpreter initialized at 0x80fedaa8
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 127976 bytes (124 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 4 seconds on interpreter 0x80fedaa8 pid: 523 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 523)
+spawned uWSGI worker 1 (pid: 530, cores: 1)
+[pid: 530|app: 0|req: 1/1] 192.168.1.244 () {44 vars in 1046 bytes} [Tue Jun 13 00:27:28 2017] GET / => generated 249 bytes in 29 msecs (HTTP/1.1 302) 4 headers in 323 bytes (1 switches on core 0)
+[pid: 530|app: 0|req: 2/2] 192.168.1.244 () {44 vars in 956 bytes} [Tue Jun 13 00:27:28 2017] GET /users/login?next=%2F => generated 3075 bytes in 356 msecs (HTTP/1.1 200) 4 headers in 319 bytes (1 switches on core 0)

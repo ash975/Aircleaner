@@ -1,0 +1,75 @@
+{% extends "bootstrap/base.html" %}
+
+{% block head %}
+{{ super() }}
+
+{% block navbar %}
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand left" href="#">
+                <img class="logo" alt="Logo" height="40px" width="40px"
+                     src="{{ url_for('static', filename = 'logo.png') }}">
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">主页</a></li>
+                <li><a href="/setting">设置</a></li>
+                <li><a href="/about">关于</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+<style>
+    .my-top-100 {
+        margin-top: 100px;
+        position: relative;
+    }
+
+    .my-container {
+        padding: 20px;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}"
+      type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename = 'favicon.ico') }}"
+      type="image/x-icon">
+<style>
+    .logo{
+        position: relative;
+        bottom: 10px;
+    }
+</style>
+
+{% endblock %}
+
+{% block title %}Page Not Found{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="container-fluid my-top-100 my-container">
+        <div class="row container-fluid">
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename ='not_found.jpg') }}" href="https://zh.moegirl.org/%E5%A1%94%E5%92%8C%E6%9C%80%E4%B8%AD">
+            </div>
+            <div class="col-md-8" align="center">
+                <h1>页面被窝吃掉了</h1>
+                <div align="center" class="my-top-100">
+                    <button typr="button" class="btn btn-lg btn-default"
+                            onclick="window.history.go(-1)">返回
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

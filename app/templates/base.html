@@ -1,0 +1,83 @@
+{% extends "bootstrap/base.html" %}
+
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}"
+      type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename = 'favicon.ico') }}"
+      type="image/x-icon">
+<style>
+    .logo{
+        position: relative;
+        bottom: 10px;
+    }
+</style>
+{% endblock %}
+
+{% block title %}Title{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand left" href="#">
+                <img class="logo" alt="Logo" height="40px" width="40px"  src="{{ url_for('static', filename = 'logo.png') }}">
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">主页</a></li>
+                <li><a href="/setting">设置</a></li>
+                <li><a href="/about">关于</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Aircleaner</a></li>
+                <li><a href="{{ url_for('users.logout') }}">注销</a></li>
+            </ul>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    {% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+<script>
+
+    var web_address=window.document.location.href;
+
+    var device_api_list = {
+        all: web_address + 'api/v1.0/device/',
+        host: web_address + 'api/v1.0/device/host',
+        fan: web_address + 'api/v1.0/device/fan',
+        pm25: web_address + 'api/v1.0/device/pm25',
+        thermometer: web_address + 'api/v1.0/device/thermometer',
+        oled: web_address + 'api/v1.0/device/oled'
+    };
+
+    var user_api = web_address + 'api/v1.0/users';
+
+
+    function post_json(api, data, callback) {
+        $.ajax({
+            type: "POST",
+            url: api,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(data),
+            dataType: "json",
+            success: callback,
+            error: function (message) {
+                $("#request-process-patent").html("提交数据失败！");
+            }
+        });
+    }
+</script>
+{% endblock %}
