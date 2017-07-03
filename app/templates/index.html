@@ -154,6 +154,9 @@
             var indoor_air = result.pm25.pm25;
             var outdoor_air = result.pm25.outdoor_air;
             var temperature = result.thermometer.temperature;
+            var mode = parseInt(result.fan.mode);
+            var host_switch = result.host.switch;
+
 
             $('#indoor_air').html(indoor_air);
             pm_color(indoor_air, '#indoor_air', 'my-circle');
@@ -162,7 +165,17 @@
             pm_color(outdoor_air, '#outdoor_air', 'btn btn-block');
 
             $('#temperature').html(temperature);
-            temperature_color(temperature, '#temperature')
+            temperature_color(temperature, '#temperature');
+
+            if (host_switch) {
+                $('#machine_switch').attr('class', 'btn my-circle-btn btn-success');
+                $('#machine_switch').html('ON');
+            } else {
+                $('#machine_switch').attr('class', 'btn my-circle-btn btn-danger');
+                $('#machine_switch').html('OFF');
+            }
+
+            set_mode(mode);
         });
     }
 
